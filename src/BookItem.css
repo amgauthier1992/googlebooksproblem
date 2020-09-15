@@ -1,0 +1,17 @@
+/* * {
+  text-align: left;
+} */
+
+.BookItemList {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookItem__row {
+  margin-left: 5px;
+  text-align: left;
+}
+
+img {
+  float: left;
+}

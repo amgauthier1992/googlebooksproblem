@@ -1,0 +1,22 @@
+.search-form {
+  background-color: #949494;
+}
+
+input {
+  background-color: rgb(240, 210, 171);
+}
+
+label {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+button {
+  margin-left: 5px;
+  /* border: 1px solid blue; */
+  border-radius: 5px;
+}
+
+button:hover {
+  border-color: #47ade9b4;
+}
