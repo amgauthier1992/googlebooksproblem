@@ -12,9 +12,9 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  getBooks = (query) => {
     const baseUrl =
-      "https://www.googleapis.com/books/v1/volumes" + "?q=" + "Poe";
+      "https://www.googleapis.com/books/v1/volumes" + "?q=" + query;
     const queryUrl = "https://cors-anywhere.herokuapp.com/" + baseUrl;
     const apiKey = "AIzaSyAUu09FLBtOvGI3IbYcE3oZubfZKbHO3Ws";
     const options = {
@@ -47,7 +47,11 @@ class App extends React.Component {
           error: err.message,
         });
       });
-  }
+  };
+
+  // componentDidMount() {
+  //   this.getBooks("Poe");
+  // }
 
   render() {
     return (
@@ -55,7 +59,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Google Book Search</h1>
         </header>
-        <BookForm bookItems={this.state.items} />
+        <BookForm bookItems={this.state.items} getBooks={this.getBooks} />
         <BookItemList bookItems={this.state.books} />
       </div>
     );

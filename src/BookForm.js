@@ -6,54 +6,30 @@ class BookForm extends React.Component {
     super(props);
     this.state = {
       searchVal: "",
-      // title: "",
-      // imageUrl: "",
-      // author: "",
-      // price: "",
-      // description: "",
     };
   }
 
   onSearch = (value) => {
     console.log(value);
-    this.setState = {
+    this.setState({
       searchVal: value,
-    };
+    });
   };
 
-  // onUpdateImageUrl = (imageUrl) => {
-  //   this.setState = {
-  //     imageUrl,
-  //   };
-  // };
-
-  // onAuthorUpdate = (author) => {
-  //   this.setState = {
-  //     author,
-  //   };
-  // };
-
-  // onPriceUpdate = (price) => {
-  //   this.setState = {
-  //     price,
-  //   };
-  // };
-
-  // onDescriptionUpdate = (description) => {
-  //   this.setState = {
-  //     description,
-  //   };
-  // };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.getBooks(this.state.searchVal);
+  };
 
   render() {
     return (
-      <form className="search-form">
+      <form className="search-form" onSubmit={this.handleSubmit}>
         <label htmlFor="Search">Search:</label>
         <input
           id="title"
           type="text"
           name="title"
-          placeholder="Enter author/volume"
+          placeholder="Enter keyword"
           value={this.state.searchVal}
           onChange={(e) => this.onSearch(e.target.value)}
         ></input>
